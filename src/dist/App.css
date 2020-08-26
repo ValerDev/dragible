@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  transition: 0.3s;
+  padding: 0;
+}
+
+body {
+  background-color: #e5e5e5;
+}
+body #App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+body #App .content {
+  display: flex;
+  background-color: #fff;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  position: relative;
+  border-radius: 17px;
+  width: 500px;
+  height: 250px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+body #App .content .range {
+  width: 400px;
+  display: flex;
+  background-color: #f1b0b0;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 17px;
+  height: 50px;
+}
+body #App .content .range::before {
+  width: 10px;
+  content: "min value";
+  position: absolute;
+  left: 0;
+  top: -2em;
+  font-size: 11px;
+  line-height: 11px;
+  display: inline-flex;
+}
+body #App .content .range::after {
+  width: 10px;
+  content: "max value";
+  position: absolute;
+  right: 1.5em;
+  top: -2em;
+  font-size: 11px;
+  line-height: 11px;
+  display: inline-flex;
+}
+body #App .content .range .rangeValue {
+  max-width: 100%;
+  width: 40%;
+  background-color: #b6aeae;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+body #App .content .range .rangeValue .arrow {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  transition: 0.3s;
+  position: absolute;
+  background-image: url(/media/images/arrow.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+body #App .content .range .rangeValue .arrow:hover {
+  opacity: 0.8;
+}
+body #App .content .range .rangeValue .left {
+  transform: rotate(180deg);
+  right: -1em;
+}
+body #App .content .range .rangeValue .left::before {
+  content: "start value";
+  position: relative;
+  top: 3.1em;
+  font-size: 11px;
+  line-height: 11px;
+  display: inline-flex;
+  transform: rotate(-180deg);
+}
+body #App .content .range .rangeValue .right {
+  left: -1em;
+}
+body #App .content .range .rangeValue .right::before {
+  content: "end value";
+  position: relative;
+  top: -3.1em;
+  font-size: 11px;
+  line-height: 11px;
+  display: inline-flex;
+}
